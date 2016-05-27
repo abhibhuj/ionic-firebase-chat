@@ -1,0 +1,28 @@
+<ion-view view-title="Chats">
+  <ion-content>
+  <h2>All invitations</h2>
+  <h2>Received</h2>
+  <ion-item ng-repeat="received in receivedInvitations" type="item-text-wrap">
+        <div class="item-avatar" ng-if="received.accepted === 'no'">
+          <img ng-src="{{received.user.profileImageURL}}">
+          <span>{{received.user.displayName}}</span>
+          <span>
+            <a class="button icon-right button-clear button-assertive ion-close" ng-click="declineInvitation(received)"></a>
+            <a class="button icon-right button-clear button-positive ion-checkmark" ng-click="acceptInvitation(received)"></a>
+          </span>
+        </div>
+  </ion-item>
+  <h2>Sent</h2>
+  <ion-item class="item-icon-right item-avatar" ng-repeat="sent in sentInvitations" type="item-text-wrap">
+        <img ng-src="{{sent.user.profileImageURL}}">
+        <h2>{{sent.user.displayName}}</h2>
+        <span class="badge badge-assertive">Rejected</span>
+  </ion-item>
+  <label class="item item-input">
+        <input type="text" ng-model="invite.email">
+  </label>
+  <button class="button button-outline button-positive" ng-click="sendInvite()">
+    Send Invite
+  </button>
+  </ion-content>
+</ion-view>

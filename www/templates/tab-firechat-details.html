@@ -1,0 +1,22 @@
+<ion-view view-title="Chats">
+  <ion-content>
+    <ion-item class="center">
+          <img class="item-avatar-center" ng-src="{{friend.profileImageURL}}">
+          <span>{{friend.displayName}}</span>
+    </ion-item>
+    </div>
+    <ion-list>
+      <ion-item class="item-icon-right item-avatar" ng-repeat="chat in currentChat" type="item-text-wrap">
+        <!--<img ng-src="{{friend.profileImageURL}}">-->
+        <!-- <h2>{{chat.id}}</h2> -->
+        <div ng-class="{'text-right' : friend.uid !== chat.id}"><p>{{chat.text}}</p></div>
+      </ion-item>
+      <label class="item item-input">
+        <input type="text" ng-model="chat.newText">
+      </label>
+      <button class="button button-outline button-positive" ng-click="addChat()">
+        Send
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-view>

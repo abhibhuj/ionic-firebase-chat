@@ -1,0 +1,19 @@
+<ion-view view-title="Chats">
+  <ion-content>
+
+    <ion-list>
+      <ion-item class="item-icon-right item-avatar" ng-repeat="friend in chatFriends" type="item-text-wrap" href="#/tab/firechats/{{friend.user.uid}}">
+        <img ng-src="{{friend.user.profileImageURL}}">
+        <h2>{{friend.user.displayName}}</h2>
+        <!-- <p>{{chat.lastText}}</p> -->
+      </ion-item>
+      <!-- <label class="item item-input">
+        <input type="text" ng-model="chat.newChat">
+      </label>
+      <button class="button button-outline button-positive" ng-click="addChat()">
+        Send
+      </button> -->
+      <div ng-click="logout()">logout</a>
+    </ion-list>
+  </ion-content>
+</ion-view>
